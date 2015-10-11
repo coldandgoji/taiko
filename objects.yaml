@@ -1,0 +1,26 @@
+user:
+  id: guid
+  username: string
+  password: md5(string)
+  time_created: datetime
+  time_modified: datetime
+
+comment:
+  id: guid
+  author_id: guid => user
+  parent_id: guid => comment
+  url: string
+  comment: string
+  time_created: datetime
+  time_modified: datetime
+
+vote:
+  id: guid
+  author_id: guid => user
+  comment_id: guid => comment
+  time_created: datetime
+
+flag:
+  id: guid
+  comment_id: guid => comment
+  time_created: datetime
